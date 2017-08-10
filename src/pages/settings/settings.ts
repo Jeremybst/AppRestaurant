@@ -50,16 +50,16 @@ export class Settings {
     }
   }
 
-  changeLanguage() {
-    console.log("language is -" + this.value);
-    if (this.value == 'fr') {
-      this.translate.use('fr');
-    }
-    else {
-      this.translate.use('en');
-    }
+//  changeLanguage() {
+//    console.log("language is -" + this.value);
+//    if (this.value == 'fr') {
+//      this.translate.use('fr');
+//    }
+//    else {
+//      this.translate.use('en');
+//    }
 
-  }
+//  }
 
 
   onSubmit(user: NgForm) {

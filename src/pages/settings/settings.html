@@ -25,7 +25,7 @@
     <p class="name">{{user.name}}</p>
     <p class="email">{{user.email}}</p>
   </div>
-  <ion-list>
+  <!-- <ion-list>
     <ion-item>
       <ion-label>{{Languages }}</ion-label>
       <ion-select [(ngModel)]="value" (ionChange)="changeLanguage()">
@@ -33,7 +33,7 @@
         </ion-option>
       </ion-select>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <ion-list>
       <ion-item *ngIf="user.notification == true">
