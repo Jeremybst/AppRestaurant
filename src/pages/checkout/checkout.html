@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">{{"Options de paiement"}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="checkOut">
+  <form (ngSubmit)="onCheckOut(f)" #f="ngForm">
+    <ion-row>
+      <ion-col col-12 class="address-header">
+        <ion-icon ios="ios-home" md="md-home"></ion-icon>
+        &nbsp;&nbsp;{{"Adresse"}}
+      </ion-col>
+    </ion-row><!-- row for address -->
+    <ion-list class="adress-line">
+      <form>
+        <ion-label class="add-heading">
+          <ion-icon ios="ios-home" md="md-home"></ion-icon>
+          &nbsp;&nbsp;{{"Votre adresse"}}
+        </ion-label>
+        <div>
+          <ion-item class="sub-address">
+            <ion-input type="text" placeholder="Nom" name="name" id="name"
+                       [(ngModel)]="address.name" requis></ion-input>
+          </ion-item>
+          <ion-item class="sub-address">
+            <ion-textarea rows="3" placeholder="Adresse" name="address" id="address"
+                          [(ngModel)]="address.address" requis></ion-textarea>
+          </ion-item>
+          <ion-item class="sub-address">
+            <ion-input type="text" placeholder="Ville" name="city" id="city"
+                       [(ngModel)]="address.city" requis></ion-input>
+          </ion-item>
+          <ion-item class="sub-address">
+            <ion-input type="number" placeholder="Code postal" name="pincode" id="pincode"
+                       [(ngModel)]="address.pincode" requis></ion-input>
+          </ion-item>
+        </div>
+      </form>
+    </ion-list>
+    <ion-row>
+      <ion-col  col-12 class="payment-header">
+        <ion-icon ios="ios-pricetags" md="md-pricetags"></ion-icon>
+        &nbsp;&nbsp;{{"Paiement"}}
+      </ion-col>
+    </ion-row>
+
+    <!--payment-->
+    <ion-list radio-group class="payment-block">
+      <ion-row>
+        <ion-col width-50 class="col-card no-padd">
+          <ion-item>
+              <ion-label>Paiement à la livraison</ion-label>
+            <ion-radio checked="true" value="cod" (click)="toggle3()"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col width-50 class="col-card no-padd">
+          <ion-item>
+            <ion-label>CB</ion-label>
+            <ion-radio value="card" (click)="toggle2()"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+    <!--payment ends-->
+
+    <!--payment input fields-->
+    <ion-row>
+      <ion-list class="card-list" [hidden]="tagHide2">
+        <ion-item class="card-detail">
+          <form>
+            <ion-row>
+              <ion-col class="no-padd">
+                <ion-item class="card-item">
+                  <ion-input type="number" placeholder="Card No:" name="cardNo" id="cardNo"
+                             [(ngModel)]="cardDetails.cardNo"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-33 class="no-padd">
+                <ion-item class="card-item cvv">
+                  <ion-input type="number" placeholder="Cvv:" name="cvv" id="cvv"
+                             [(ngModel)]="cardDetails.cvv"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col width-67 class="no-padd">
+                <ion-item class="card-item date">
+
+                  <ion-datetime displayFormat="DD/MM/YYYY" name="ExpiryDate" id="ExpiryDate"
+                                [(ngModel)]="cardDetails.ExpiryDate"></ion-datetime>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="no-padd">
+                <ion-item class="card-item">
+                  <ion-input type="text" placeholder="Name on Card:"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </form>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+
+    <button class="checkOut-btn" ion-button block type="submit" [disabled]="!f.valid">
+      <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      &nbsp;&nbsp;{{"Validez" | translate}}
+    </button>
+  </form>
+</ion-content>

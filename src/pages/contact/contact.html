@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{"Contact" | translate}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact">
+  <p class="contact-head">{{"Contactez-nous"}}</p>
+  <form (ngSubmit)="onSend(f)" #f="ngForm">
+    <!--name-->
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>{{"Nom:"}}</ion-label>
+          <ion-input type="text" name="name" id="name"
+                     [(ngModel)]="user.name" requis></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--email-->
+    <ion-row>
+      <ion-col col-12>
+        <ion-item>
+          <ion-label>{{"Email:" | translate}}</ion-label>
+          <ion-input type="email" name="email" id="email"
+                     [(ngModel)]="user.email" requis></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--message-->
+    <ion-row>
+      <ion-col  col-12>
+        <ion-item>
+          <ion-label>{{"Message:" | translate}}</ion-label>
+          <ion-textarea rows="6" lineHeight="42" name="message" id="message"
+                        [(ngModel)]="user.message" required></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!--button-->
+    <ion-row>
+      <ion-col col-12>
+        <button class="submit-btn" ion-button type='submit' [disabled]="!f.valid"> {{"Envoyez"}}</button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
