@@ -6,6 +6,7 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {firebaseConfig} from './firebase.config';
 import {CartService} from '../pages/cart.service';
+import {Settings} from '../pages/settings/settings';
 import {TranslateModule, TranslateStaticLoader, TranslateLoader} from 'ng2-translate/ng2-translate';
 import {Http, HttpModule} from '@angular/http';
 import {BrowserModule} from "@angular/platform-browser";
@@ -39,7 +40,8 @@ export function createTranslateLoader(http: Http) {
     MyApp
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler},
-    CartService
+    CartService,
+    Settings
   ]
 })
 export class AppModule {

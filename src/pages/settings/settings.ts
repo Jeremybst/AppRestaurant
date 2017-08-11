@@ -1,9 +1,11 @@
 import {Component} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
 import {NgForm} from "@angular/forms";
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase, FirebaseObjectObservable,FirebaseListObservable} from 'angularfire2/database'
 import {TranslateService} from 'ng2-translate';
+
 
 @IonicPage()
 @Component({
@@ -11,7 +13,7 @@ import {TranslateService} from 'ng2-translate';
   templateUrl: 'settings.html'
 })
 export class Settings {
-  user: any = {}
+  user: any = {};
   url: any = '';
   value: any;
   options = [

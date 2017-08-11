@@ -1,4 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
+import {NgModule} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -6,6 +7,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {OneSignal} from '@ionic-native/onesignal';
 import {SocialSharing} from '@ionic-native/social-sharing';
+
 
 @Component({
   templateUrl: 'app.html',
