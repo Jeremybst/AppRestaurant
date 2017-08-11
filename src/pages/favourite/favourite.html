@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>{{"Favoris"}}</ion-title>
+    <ion-title>{{"Favoris" | translate}}</ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="navcart()">
         <ion-icon name="cart"></ion-icon>
@@ -17,9 +17,8 @@
      <ion-row>
        <ion-icon class="empty-cart" name="heart"></ion-icon>
      </ion-row>
-        <h4>La liste de favoris est vide !</h4>
+        <h4>Vous n\'avez pas de favoris!</h4>
     </div>
-
   <div *ngIf="isFavourite()">
   <ion-card *ngFor="let favouriteItem of favouriteItems">
     <ion-list>
@@ -33,7 +32,7 @@
           <ion-col col-6>
             <button class="add" ion-button (click)="buyNow(favouriteItem.$key)">
             <ion-icon name="cart"></ion-icon>
-            &nbsp; {{"Achetez" | translate}}
+            &nbsp; {{"Acheter maintenant !" | translate}}
            </button>
          </ion-col>
           <ion-col col-6>

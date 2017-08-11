@@ -23,7 +23,7 @@ export class FavouritePage {
             this.favouriteItems = res;
           })
         }
-   
+
   }
 
   isFavourite(): boolean {
@@ -49,7 +49,7 @@ export class FavouritePage {
           this.db.object('/users/' + this.af.auth.currentUser.uid + '/favourite/' + key).remove();
           this.createToaster('removed from favourites', '3000');
         }
-     
+
 
   }
     createToaster(message, duration) {
